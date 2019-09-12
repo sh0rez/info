@@ -1,0 +1,84 @@
+/* `border-box` als Boxmodell */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Allgemeines */
+body {
+  font-family: "Roboto Mono", monospace;
+}
+
+/* Inhalt mittig halten */
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1em;
+}
+
+/* Inhalt auf 1000px begrenzen, falls viewport größer */
+.content {
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Terminalfenster */
+main {
+  border: 1px solid black;
+  display: flex;
+}
+
+/* Titelleiste des Terminalfensters */
+.title {
+  display: flex;
+  justify-content: space-between;
+  background: black;
+  color: white;
+  padding: 1em;
+}
+
+/* Inhalt des Terminalfensters */
+.code {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+/* Blinkender Cursor */
+.cursor {
+  animation: blink 1s linear 0s infinite;
+  display: inline-block;
+  margin-left: 1px;
+}
+
+@keyframes blink {
+  0% {
+    background: #fff;
+  }
+  47% {
+    background: #fff;
+  }
+  50% {
+    background: #000;
+  }
+  97% {
+    background: #000;
+  }
+  100% {
+    background: #fff;
+  }
+}
+
+/* Fußzeile */
+footer {
+  position: fixed;
+  bottom: 0;
+  padding: 1em;
+  background: white;
+}
