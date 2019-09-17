@@ -32,6 +32,7 @@ body {
 main {
   border: 1px solid black;
   display: flex;
+  flex-direction: column;
 }
 
 /* Titelleiste des Terminalfensters */
@@ -48,6 +49,16 @@ main {
   display: flex;
   flex-direction: column;
   padding: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  background-color: #00000017;
+}
+
+a:hover {
+  background-color: #00000036;
 }
 
 /* Blinkender Cursor */
