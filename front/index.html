@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <!-- Anpassende Fenstergröße (Responsive) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Standard-CSS des Browsers entfernen -->
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+
+    <!-- Roboto Mono Schriftart -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.1/css/all.css"
+    />
+
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="center">
+      <!-- Kopfzeile -->
+      <header class="content">
+        <h1>tom!</h1>
+        <h4>Informatik GK Q2</h4>
+      </header>
+
+      <!-- Hauptinhalt (Terminal) -->
+      <main class="content">
+        <aside>
+          <img class="profile" width="100%" src="profile.png" />
+          <h2>Tom Braack</h2>
+          <h5>Software Engineer</h5>
+          <ul>
+            <li><a href="https://golang.org/">Golang</a></li>
+            <li>ECMAScript 6</li>
+            <li><a href="https://www.cncf.io/">Cloud Native</a></li>
+            <li><a href="https://k8s.io">Kubernetes</a></li>
+            <li><a href="github.com/sh0rez">Open Source</a></li>
+          </ul>
+        </aside>
+
+        <div class="links">
+          <h2>Links</h2>
+
+          <!-- Homepage -->
+          <a icon="&#xf57d;" class="project ic ics" href="https://shorez.de">
+            <h4>Homepage</h4>
+            <p>
+              Persönliche Portfolioseite, erstellt mit modernen Webtechnologien.
+              Als Framework kam ReactJS zum Einsatz, gepaart mit GatsbyJS zur
+              leichteren Anwendung.
+            </p>
+            <p>
+              ES6, JSX und CSS-in-JS erlauben eine hochperformante, abstrahierte
+              und klare Codebasis. Durch Webpack werden alle Abhängigkeiten
+              schließlich gebündelt und der Anwendungscode als Service Worker
+              verpackt, sodass die Website nach anfänglicher Ladezeit kaum
+              weitere Anfragen an den Server senden muss und sogar offline
+              ausgeführt werden kann.
+            </p>
+            <img width="100%" src="website.png" />
+            <ul>
+              <li>Gatsby</li>
+              <li>React</li>
+              <li>SSR</li>
+              <li>Responsive</li>
+            </ul>
+          </a>
+
+          <!-- GitHub -->
+          <a
+            icon="&#xf09b;"
+            class="project ic icb"
+            href="https://github.com/sh0rez"
+          >
+            <h4>GitHub</h4>
+            <p>
+              GitHub ist die größte Plattform der Welt für quelloffene Software
+              und bietet Werkzeuge für Communities zum gemeinsamen Entwicklen
+              von Software.
+            </p>
+            <img width="100%" src="github.png" />
+            <ul>
+              <li>Open Source</li>
+              <li>Git</li>
+              <li>Version Control</li>
+            </ul>
+          </a>
+        </div>
+      </main>
+
+      <!-- Fußzeile -->
+      <footer class="content">
+        &copy; Copyright 2019, Tom Braack
+      </footer>
+    </div>
+  </body>
+</html>
