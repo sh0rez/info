@@ -12,6 +12,7 @@ html {
 body {
   font-family: "Roboto", sans-serif;
   line-height: 1.4;
+  color: #333333;
 }
 
 h1 {
@@ -92,6 +93,10 @@ a:hover {
 .project:hover h4 {
   text-decoration: underline;
 }
+.nohover:hover h4 {
+  text-decoration: inherit;
+}
+
 .project::before {
   font-size: 1.25em;
 }
@@ -106,7 +111,7 @@ a:hover {
   margin-top: 0.3em;
 }
 
-ul {
+.tags {
   padding: 0;
   margin-bottom: 0;
   display: flex;
@@ -115,13 +120,14 @@ ul {
   flex-wrap: wrap;
 }
 
-li {
+.tags li {
   flex-shrink: 0;
   font-size: 0.85em;
   margin-left: 0.3em;
   margin-bottom: 0.3em;
   display: inline;
-  background: black;
+  /* background: black; */
+  background: #333333;
   color: white;
   border-radius: 5px;
   padding: 0.3em;

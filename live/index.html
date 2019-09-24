@@ -21,10 +21,16 @@
     />
 
     <!-- FontAwesome Icons -->
-    <script src="https://kit.fontawesome.com/212cddc416.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/212cddc416.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- CSS stylesheet -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Immer in neuem Tab -->
+    <base target="_blank" />
   </head>
 
   <body>
@@ -41,7 +47,7 @@
           <img class="profile" width="100%" src="profile.png" />
           <h2>Tom Braack</h2>
           <h5>Software Engineer</h5>
-          <ul>
+          <ul class="tags">
             <li><a href="https://golang.org/">Golang</a></li>
             <li>ECMAScript 6</li>
             <li><a href="https://www.cncf.io/">Cloud Native</a></li>
@@ -52,6 +58,28 @@
 
         <div class="links">
           <h2>Links</h2>
+
+          <!-- Kursteilnehmer -->
+          <div
+            icon="&#xf500;"
+            class="project nohover ic ics"
+            href="https://shorez.de"
+          >
+            <h4>Kursteilnehmer</h4>
+            <p>Andere Teilnehmer des Kurses:</p>
+            <ul>
+              <li><a href="http://ah.gaesdonck.info">Adam Haman</a></li>
+              <li>
+                <a href="http://da.gaesdonck.info">Damian Aschenbrenner</a>
+              </li>
+              <li><a href="http://db.gaesdonck.info">David Berns</a></li>
+              <li><a href="http://fr.gaesdonck.info">Felix Rogmans</a></li>
+              <li><a href="http://nl.gaesdonck.info">Nicolas Lenschow</a></li>
+              <li><a href="http://pb.gaesdonck.info">Paula Bey</a></li>
+              <li><a href="http://ts.gaesdonck.info">Tizian Spies</a></li>
+              <li><a href="http://tc.gaesdonck.info">Thomas Cleff</a></li>
+            </ul>
+          </div>
 
           <!-- Homepage -->
           <a icon="&#xf57d;" class="project ic ics" href="https://shorez.de">
@@ -70,7 +98,7 @@
               ausgeführt werden kann.
             </p>
             <img width="100%" src="website.png" />
-            <ul>
+            <ul class="tags">
               <li>Gatsby</li>
               <li>React</li>
               <li>SSR</li>
