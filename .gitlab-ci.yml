@@ -1,0 +1,15 @@
+image: ubuntu:18.04
+
+before_script:
+  - apt-get update -qy
+  - apt-get install -y lftp
+
+deploy:
+  script:
+    - >
+      lftp -e
+      "set ftp:ssl-allow no;
+      open tb.gaesdonck.info;
+      user $FTP_USERNAME $FTP_PASSWORD;
+      mirror -X .* -X .*/ --reverse --verbose --delete live/ /;
+      bye"
