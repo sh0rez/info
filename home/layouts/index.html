@@ -1,60 +1,12 @@
 <html>
-  <head>
-    <!-- Anpassende Fenstergröße (Responsive) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="UTF-8" />
-
-    <!-- Standard-CSS des Browsers entfernen -->
-    <link
-      rel="stylesheet"
-      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
-    />
-
-    <!-- Roboto Mono Schriftart -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- FontAwesome Icons -->
-    <script
-      src="https://kit.fontawesome.com/212cddc416.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- CSS stylesheet -->
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- Immer in neuem Tab -->
-    <base target="_blank" />
-  </head>
+  {{partial "head.html"}}
 
   <body>
     <div class="center">
-      <!-- Kopfzeile -->
-      <header class="content">
-        <h1>tom!</h1>
-        <h4>Informatik GK Q2</h4>
-      </header>
+      {{partial "header.html"}}
 
-      <!-- Hauptinhalt (Terminal) -->
       <main class="content">
-        <aside>
-          <img class="profile" width="100%" src="profile.png" />
-          <h2>Tom Braack</h2>
-          <h5>Software Engineer</h5>
-          <ul class="tags">
-            <li><a href="https://golang.org/">Golang</a></li>
-            <li>ECMAScript 6</li>
-            <li><a href="https://www.cncf.io/">Cloud Native</a></li>
-            <li><a href="https://k8s.io">Kubernetes</a></li>
-            <li><a href="github.com/sh0rez">Open Source</a></li>
-          </ul>
-        </aside>
+        {{partial "side.html"}}
 
         <div class="links">
           <h2>Links</h2>
@@ -119,7 +71,7 @@
               von Software.
             </p>
             <img width="100%" src="github.png" />
-            <ul>
+            <ul class="tags">
               <li>Open Source</li>
               <li>Git</li>
               <li>Version Control</li>
@@ -129,9 +81,7 @@
       </main>
 
       <!-- Fußzeile -->
-      <footer class="content">
-        &copy; Copyright 2019, Tom Braack
-      </footer>
+      {{partial "footer.html"}}
     </div>
   </body>
 </html>

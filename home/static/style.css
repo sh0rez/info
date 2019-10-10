@@ -19,6 +19,10 @@ h1 {
   font-family: "Roboto Mono", monospace;
 }
 
+article h1 {
+  font-family: "Roboto", sans-serif;
+}
+
 /* Inhalt mittig halten */
 .center {
   display: flex;
@@ -87,9 +91,9 @@ a:hover {
   width: 100%;
   background: white;
 }
-.links h2 {
+/* .links h2 {
   margin-top: 0;
-}
+} */
 .project:hover h4 {
   text-decoration: underline;
 }

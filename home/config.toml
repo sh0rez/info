@@ -1,0 +1,4 @@
+baseURL = "http://tb.gaesdonck.info/"
+languageCode = "de-DE"
+title = "Tom Braack"
+disableKinds = ["RSS"]

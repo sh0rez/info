@@ -1,0 +1,18 @@
+<html>
+  {{partial "head.html"}}
+
+  <body>
+    <div class="center">
+      {{partial "header.html"}}
+
+      <main class="content">
+        {{partial "side.html"}}
+        <article class="links">
+          {{.Content}}
+        </article>
+      </main>
+
+      {{partial "footer.html"}}
+    </div>
+  </body>
+</html>
