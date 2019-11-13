@@ -1,0 +1,13 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: build
+    image: plugins/hugo
+    settings:
+      source: home
+      output: public
+  - name: find
+    image: alpine:edge
+    commands:
+      - find .
