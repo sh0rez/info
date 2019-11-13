@@ -11,7 +11,7 @@ steps:
     image: cschlosser/drone-ftps
     settings:
       hostname: tb.gaesdonck.info:21
-      # clean_dir: true
+      clean_dir: true
       secure: false
       dest_dir: html
       src_dir: /home/public
@@ -20,7 +20,3 @@ steps:
         from_secret: ftpuser
       FTP_PASSWORD:
         from_secret: ftppass
-  # - name: find
-  #   image: alpine:edge
-  #   commands:
-  #     - find .
