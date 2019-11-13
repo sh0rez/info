@@ -26,9 +26,7 @@ dem Konsumenten dennoch dieselbe Nutzererfahrung zu ermöglichen, wird vor
 Auslieferung der Webseite der Inhalt _dynamisch_ in den HTML Quelltext
 integriert.
 
-Dazu haben sich im Laufe der Zeit insbesondere zwei Techniken durchgesetzt:
-
-## Pre-Processing
+Dazu haben sich im Laufe der Zeit insbesondere folgende Technik durchgesetzt:
 
 Sobald der Webbrowser des Nutzers eine Anfrage an den Webserver stellt
 (`HTTP GET`) würde dieser üblicherweise die angeforderter Ressource (z.B.
@@ -63,6 +61,12 @@ Durch übersichtliche Oberflächen zur Verwaltung der Inhalte und WYSIWYG Editor
 die dem Komfort von Microsoft Word entsprechen gibt es keine Kontaktfläche
 zwischen dem Ersteller des Inhalts und HTML mehr.
 
+Um Anwendern Arbeit zu ersparen haben sich inzwischen Werkzeuge wie Wordpress,
+Joomla oder Typo3 durchgesetzt: Sie funktionieren technisch ähnlich zu dem hier
+beschriebenen Verfahren, erlauben jedoch sehr einfache Erweiterung durch Plugins
+und Themes. Der verwaltende Nutzer muss nicht mehr unbedingt tiefe technische
+Kenntnisse haben.
+
 Ein sehr deutlicher Nachteil dieses Konzepts ist jedoch die mangelnde
 Recheneffizienz und damit einhergehende geringe Geschwindigkeit: Für jeden
 Seitenaufruf muss der Inhalt erstens erneut aus der Datenbank geladen werden,
@@ -77,5 +81,3 @@ Insbesondere bei mobilen Verbindungen ist das ein Problem, da diese häufig
 langsam sind und lange Wartezeiten Nutzer abwandern lassen. Auch prominente
 Suchmaschinen wie Google räumen schnellen Seiten inzwischen höhere Punkte im
 Ranking ein, worduch es nötig wird auf die Seitengeschwindigkeit zu achten.
-
-## Static Site Generation
