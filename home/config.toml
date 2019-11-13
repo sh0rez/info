@@ -1,4 +1,4 @@
-baseURL = "http://tb.gaesdonck.info/"
+baseURL = "http://tb.gaesdonck.info/html"
 languageCode = "de-DE"
 title = "Tom Braack"
 disableKinds = ["RSS"]
