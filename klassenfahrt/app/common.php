@@ -1,17 +1,12 @@
 <?php
 
 // defaults
-$HOST = "127.0.0.1";
-$USER = "root";
-$PASS = "root";
-$DB = "test";
-
 $RoomsTable = "rooms";
 $StudentsTable = "students";
 
 $urlPrefix = "";
 
-// load user config
+// load user config (must provide $pdo)
 include_once("../config.php");
 
 // database schema
@@ -31,9 +26,6 @@ CREATE TABLE IF NOT EXISTS $StudentsTable(
     FOREIGN KEY (RoomID) REFERENCES $RoomsTable(ID) ON DELETE CASCADE
 );
 SQL;
-
-// database client
-$pdo = new PDO("mysql: host=$HOST;dbname=$DB", $USER, $PASS);
 
 // ensure schema
 $pdo->exec($RoomsSchema);
