@@ -4,6 +4,7 @@
 $HOST = "127.0.0.1";
 $USER = "root";
 $PASS = "root";
+$DB = "test";
 
 $RoomsTable = "rooms";
 $StudentsTable = "students";
@@ -32,7 +33,7 @@ CREATE TABLE IF NOT EXISTS $StudentsTable(
 SQL;
 
 // database client
-$pdo = new PDO("mysql:host=$HOST;dbname=test", $USER, $PASS);
+$pdo = new PDO("mysql:host=$HOST;dbname=$DB", $USER, $PASS);
 
 // ensure schema
 $pdo->exec($RoomsSchema);
