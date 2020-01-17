@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS $StudentsTable(
 SQL;
 
 // database client
-$pdo = new PDO("mysql:host=$HOST;dbname=$DB", $USER, $PASS);
+$pdo = new PDO("mysql: host=$HOST;dbname=$DB", $USER, $PASS);
 
 // ensure schema
 $pdo->exec($RoomsSchema);
