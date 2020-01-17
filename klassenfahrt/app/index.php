@@ -14,6 +14,7 @@ function Render($mRooms, $fRooms)
 {
     global $urlPrefix;
 
+    $nav = RenderNav("active", "");
     $rooms = RenderRooms($mRooms, $fRooms);
     return <<<HTML
 <html>
@@ -28,20 +29,23 @@ function Render($mRooms, $fRooms)
           box-sizing: border-box;
         }
         </style>
-        <div style="display: flex; width: 100%; justify-content: center; padding: 1em;">
-            <main style="display: flex; width: 100%; max-width: 800px; flex-direction: column" class="card">
-            <div class="card-body" style="display: flex; flex-direction: column;">
-                <h1>Klassenfahrt</h1>
-                <form style="display: flex; flex-direction: column; margin-bottom: 0;" action="$urlPrefix/submit.php" method="post">
-                    $rooms 
-                    <div class="form-row">
-                        <div class="col-md-auto"> <button class="btn btn-primary" type="submit">Übernehmen</button> </div>
-                        <div class="col-md-auto"> <button class="btn btn-secondary" type="button" style="margin-bottom: .3em" onclick="window.print()">Drucken</button> </div>
-                        <div class="col-md-auto"> <a class="btn btn-secondary" href="$urlPrefix/admin.php">Einstellungen</a> </div>
-                    </div>
-                </form>
-            </main>
+        $nav 
+        <div style="display: flex; width: 100%; align-items: center; flex-direction: column; padding: 1em;">
+        
+            <div style="display: flex; width: 100%; max-width: 800px; flex-direction: column; margin-bottom: 1em">
+                <h1>Zimmerverteilung</h1>
             </div>
+            <main style="display: flex; width: 100%; max-width: 800px; flex-direction: column" class="card">
+                <div class="card-body" style="display: flex; flex-direction: column;">
+                    <form style="display: flex; flex-direction: column; margin-bottom: 0;" action="$urlPrefix/submit.php" method="post">
+                        $rooms 
+                        <div class="form-row">
+                            <div class="col-md-auto"> <button class="btn btn-primary" type="submit">Übernehmen</button> </div>
+                            <div class="col-md-auto"> <button class="btn btn-secondary" type="button" style="margin-bottom: .3em" onclick="window.print()">Drucken</button> </div>
+                        </div>
+                    </form>
+                </div>
+            </main>
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

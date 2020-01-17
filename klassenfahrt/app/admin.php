@@ -1,3 +1,4 @@
+<?php include_once("common.php"); ?>
 <html>
 <head>
     <meta charset="utf-8">
@@ -19,6 +20,7 @@
         margin-bottom: 1em;
     }
 </style>
+<?php echo RenderNav("","active") ?>
 <div style="display: flex; width: 100%; flex-direction: column; align-items: center; padding: 1em;">
     <div style="display: flex; width: 100%; max-width: 800px; flex-direction: column; margin-bottom: 1em">
         <h1>Einstellungen</h1>
@@ -28,7 +30,6 @@
         <div class="card-body" style="display: flex; flex-direction: column;">
             <h3>Räume</h3>
             <?php
-            include_once("common.php");
             $rooms = $pdo->query("SELECT * from rooms;");
 
             foreach ($rooms as $r) {
@@ -67,7 +68,8 @@
 
 <?php
 
-function RenderSexPicker($sex) {
+function RenderSexPicker($sex)
+{
     $male = $sex == 1 ? "selected" : "";
     $female = $sex == 0 ? "selected" : "";
 
@@ -77,7 +79,8 @@ function RenderSexPicker($sex) {
 HTML;
 }
 
-function RenderRoomProp($room) {
+function RenderRoomProp($room)
+{
     global $urlPrefix;
     $cap = $room["Cap"];
     $sex = $room["Sex"];
@@ -127,6 +130,7 @@ function RenderRoomProp($room) {
 </form>
 HTML;
 }
+
 ?>
 
 </html>

@@ -30,3 +30,24 @@ SQL;
 // ensure schema
 $pdo->exec($RoomsSchema);
 $pdo->exec($StudentsSchema);
+
+// header
+function RenderNav($homeActive, $settingsActive)
+{
+    global $urlPrefix;
+    return <<<HTML
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+    <a class="navbar-brand" href="$urlPrefix/">Klassenfahrt</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item $homeActive">
+                <a class="nav-link" href="$urlPrefix/">Home<a>
+            </li>
+            <li class="nav-item $settingsActive">
+                <a class="nav-link" href="$urlPrefix/admin.php">Einstellungen</a>
+            </li>
+        </ul>
+    </div>  
+</nav>
+HTML;
+}
