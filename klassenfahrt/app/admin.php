@@ -96,7 +96,7 @@ function RenderRoomProp($room) {
     $sexPicker = RenderSexPicker($sex);
 
     return <<<HTML
-$<form action="$urlPrefix/actions.php" method="post">
+<form action="$urlPrefix/actions.php" method="post">
 <div class="form-row">
     <div class="col-md-auto" style="display: none">
         <input name="id" class="form-control" type="text" value="$id"> 
