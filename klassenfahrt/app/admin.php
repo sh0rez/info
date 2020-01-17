@@ -36,7 +36,7 @@
             }
             ?>
 
-            <form action="/actions.php" method="post" style="margin-bottom: 0">
+            <form action="<?php echo $urlPrefix ?>/actions.php" method="post" style="margin-bottom: 0">
                 <button type="submit" class="btn btn-primary" name="action" value="new">Neuer Raum</button>
             </form>
         </div>
@@ -47,7 +47,7 @@
             <h3>Zurücksetzen</h3>
             <p>Gesame Zimmerverteilung löschen und von vorne beginnen.</p>
 
-            <form action="/actions.php" method="post" style="margin-bottom: 0">
+            <form action="<?php echo $urlPrefix ?>/actions.php" method="post" style="margin-bottom: 0">
                 <button type="submit" class="btn btn-danger" name="action" value="reset">Alles löschen</button>
             </form>
         </div>
@@ -78,6 +78,7 @@ HTML;
 }
 
 function RenderRoomProp($room) {
+    global $urlPrefix;
     $cap = $room["Cap"];
     $sex = $room["Sex"];
     $id = $room["ID"];
@@ -95,7 +96,7 @@ function RenderRoomProp($room) {
     $sexPicker = RenderSexPicker($sex);
 
     return <<<HTML
-<form action="/actions.php" method="post">
+$<form action="$urlPrefix/actions.php" method="post">
 <div class="form-row">
     <div class="col-md-auto" style="display: none">
         <input name="id" class="form-control" type="text" value="$id"> 

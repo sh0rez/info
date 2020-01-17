@@ -32,7 +32,7 @@ function Render($mRooms, $fRooms)
             <main style="display: flex; width: 100%; max-width: 800px; flex-direction: column" class="card">
             <div class="card-body" style="display: flex; flex-direction: column;">
                 <h1>Klassenfahrt</h1>
-                <form style="display: flex; flex-direction: column; margin-bottom: 0;" action="submit.php" method="post">
+                <form style="display: flex; flex-direction: column; margin-bottom: 0;" action="$urlPrefix/submit.php" method="post">
                     $rooms 
                     <div class="form-row">
                         <div class="col-md-auto"> <button class="btn btn-primary" type="submit">Übernehmen</button> </div>
