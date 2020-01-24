@@ -14,8 +14,15 @@ function Render($mRooms, $fRooms)
 {
     global $urlPrefix;
 
-    $nav = RenderNav("active", "");
+    $nav = RenderNav("active", "", "");
     $rooms = RenderRooms($mRooms, $fRooms);
+
+    $enableApply = "";
+    if ($rooms == "") {
+        $rooms = "<p>Keine freien Räume verfügbar</p>";
+        $enableApply = "disabled";
+    }
+
     return <<<HTML
 <html>
     <head>
@@ -40,8 +47,7 @@ function Render($mRooms, $fRooms)
                     <form style="display: flex; flex-direction: column; margin-bottom: 0;" action="$urlPrefix/submit.php" method="post">
                         $rooms 
                         <div class="form-row">
-                            <div class="col-md-auto"> <button class="btn btn-primary" type="submit">Übernehmen</button> </div>
-                            <div class="col-md-auto"> <button class="btn btn-secondary" type="button" style="margin-bottom: .3em" onclick="window.print()">Drucken</button> </div>
+                            <div class="col-md-auto"> <button $enableApply class="btn btn-primary" type="submit">Übernehmen</button> </div>
                         </div>
                     </form>
                 </div>
@@ -55,16 +61,30 @@ function Render($mRooms, $fRooms)
 HTML;
 }
 
+function HasRooms($rooms)
+{
+    $r = "";
+    foreach ($rooms as $row) {
+        $r .= RenderRoom($row, true, true);
+    }
+
+    return $r == "";
+}
+
 function RenderRooms($mRooms, $fRooms)
 {
     $male = "";
     foreach ($mRooms as $row) {
-        $male .= RenderRoom($row);
+        $male .= RenderRoom($row, true, true);
     }
 
     $female = "";
     foreach ($fRooms as $row) {
-        $female .= RenderRoom($row);
+        $female .= RenderRoom($row, true, true);
+    }
+
+    if ($female == "" && $male == "") {
+        return "";
     }
 
     return <<<HTML
@@ -79,46 +99,3 @@ function RenderRooms($mRooms, $fRooms)
 HTML;
 }
 
-function RenderRoom($room)
-{
-    global $pdo;
-    global $StudentsTable;
-
-    $id = $room["ID"];
-    $students = $pdo->query("SELECT * FROM $StudentsTable WHERE roomid=$id");
-
-    $inputs = "";
-    $i = 0;
-    foreach ($students as $s) {
-        $inputs .= RenderSpot($s);
-        $i++;
-    }
-
-    for (; $i < $room["Cap"]; $i++) {
-        $inputs .= RenderEmptySpot($i, $room["ID"]);
-    }
-
-    $sex = $room["Sex"] == 0 ? "Weiblich" : "Männlich";
-
-    return <<<HTML
-<div style="width: 100%; margin-left: 1em; margin-bottom: 1em;">
-    Betten: $room[Cap], $sex
-    $inputs
-</div>
-HTML;
-}
-
-function RenderEmptySpot($i, $roomID)
-{
-    return <<<HTML
-<input class="form-control" type="text" name="$roomID-$i" style="width: 100%; margin-bottom: .5em;" />
-HTML;
-}
-
-function RenderSpot($student)
-{
-    $name = $student["Name"];
-    return <<<HTML
-<input disabled value="$name" type="text" style="width: 100%; margin-bottom: .5em;" class="form-control"/>
-HTML;
-}

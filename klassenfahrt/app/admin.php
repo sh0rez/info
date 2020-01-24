@@ -20,7 +20,7 @@
         margin-bottom: 1em;
     }
 </style>
-<?php echo RenderNav("","active") ?>
+<?php echo RenderNav("","", "active") ?>
 <div style="display: flex; width: 100%; flex-direction: column; align-items: center; padding: 1em;">
     <div style="display: flex; width: 100%; max-width: 800px; flex-direction: column; margin-bottom: 1em">
         <h1>Einstellungen</h1>

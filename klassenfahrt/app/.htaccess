@@ -1,6 +1,6 @@
-<Files admin.php>
+<FilesMatch "^(admin|report)\.php$">
 AuthType Basic
 AuthName "Geschützter Bereich (admin:admin)"
 AuthUserFile /www/htdocs/w0125433/tb.gaesdonck.info/.htpasswd
 Require valid-user
-</Files>
+</FilesMatch>

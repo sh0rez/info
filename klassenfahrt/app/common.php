@@ -31,8 +31,11 @@ SQL;
 $pdo->exec($RoomsSchema);
 $pdo->exec($StudentsSchema);
 
+// rooms
+include_once("./rooms.php");
+
 // header
-function RenderNav($homeActive, $settingsActive)
+function RenderNav($homeActive, $reportActive, $settingsActive)
 {
     global $urlPrefix;
     return <<<HTML
@@ -43,6 +46,9 @@ function RenderNav($homeActive, $settingsActive)
             <li class="nav-item $homeActive">
                 <a class="nav-link" href="$urlPrefix/">Home<a>
             </li>
+            <li class="nav-item $reportActive">
+                <a class="nav-link" href="$urlPrefix/report.php">Bericht</a>
+            </li>
             <li class="nav-item $settingsActive">
                 <a class="nav-link" href="$urlPrefix/admin.php">Einstellungen</a>
             </li>
@@ -51,3 +57,4 @@ function RenderNav($homeActive, $settingsActive)
 </nav>
 HTML;
 }
+
