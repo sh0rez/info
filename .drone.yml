@@ -37,3 +37,20 @@ steps:
         from_secret: ftpuser
       FTP_PASSWORD:
         from_secret: ftppass
+---
+kind: pipeline
+name: adressbuch
+steps:
+  - name: deploy
+    image: cschlosser/drone-ftps
+    settings:
+      hostname: tb.gaesdonck.info:21
+      clean_dir: true
+      secure: false
+      dest_dir: apps/adressbuch
+      src_dir: /adressbuch/app
+    environment:
+      FTP_USERNAME:
+        from_secret: ftpuser
+      FTP_PASSWORD:
+        from_secret: ftppass
