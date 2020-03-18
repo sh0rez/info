@@ -62,7 +62,7 @@ HTML;
 <div style="display: flex; width: 100%; align-items: center; flex-direction: column; padding: 1em;">
 
     <div style="display: flex; width: 100%; max-width: 800px; flex-direction: column; margin-bottom: 1em">
-        <h1>Zimmerverteilung</h1>
+        <h1>Adressbuch</h1>
     </div>
     <main style="display: flex; width: 100%; max-width: 800px; flex-direction: column" class="card">
         <div class="card-body">
