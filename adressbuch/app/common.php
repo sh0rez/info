@@ -2,10 +2,11 @@
 
 // defaults
 $AddressTable = "addresses";
-$urlPrefix = "";
 
 // load user config (must provide $pdo)
 include_once("../config.php");
+
+$urlPrefix = $adressPrefix;
 
 // database schema
 $AddressSchema = <<<SQL
